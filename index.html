@@ -1,0 +1,65 @@
+<!-- Functionality : add a todo,delete a todo, by default disabled but if double click edit -->
+<!-- After body add script tag to import class and index.js -->
+<!-- Create index.html and index.css first get basic ui first -->
+<!-- # === id, . === class -->
+<!-- Basic Setup HTML : 
+    Div.container ( 
+        Div.inputBox ( 
+            input#getTodoInput -> type=text, placeholder="Enter todo here"
+            span.crossIcon
+        )
+        button -> type="button",onClick="addTodo()"
+    )
+    -->
+<!-- Dummy ul li elements 
+    ul.todoList#todoListcontainer(
+        li(
+            div.inputBox(
+                input-> type="text"
+                span.crossIcon
+            )
+        )
+    )
+-->
+<!-- Create class.js and index.js later to get the functionalit working -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Todo Application</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inputBox">
+        <input
+          id="getTodoInput"
+          type="text"
+          placeholder="Enter Todo here"
+          class=""
+        />
+        <span class="crossIcon" onclick="emptyTodoInput()">X</span>
+      </div>
+      <button type="button" onclick="addTodo()">Add Todo</button>
+
+      <ul
+        ondblclick="handleEdit(event)"
+        onClick="handleDelete(event)"
+        id="todoListContainer"
+        class="todoList"
+      >
+        <!-- <li>
+          <div class="inputBox">
+            <input type="text" />
+            <span class="crossIcon">X</span>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+  </body>
+  <script src="class.js"></script>
+  <script src="index.js"></script>
+</html>

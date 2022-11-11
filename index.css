@@ -1,0 +1,78 @@
+/* Basic Setup to get Input box and a cross inside */
+
+/* Add display flex to make sure the input + button are flex*/
+.container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Verified */
+.inputBox {
+  border: 1px solid black;
+  position: relative;
+  /* width: 100%; */
+}
+
+/* Add padding to ensure that text and the cross do not intersect*/
+.inputBox > input {
+  border: 0;
+  padding: 10px;
+  width: calc(100% - 30px);
+}
+/* Chrome Dev tools : Sources -> body -> input box in that style(right most) -> hover */
+/* This is a psuedo class of input ie focus-visible which needs to be 0 */
+.inputBox > input:focus-visible {
+  outline: 0;
+}
+
+/* It shoild be position absolute to input box to align it side by side */
+/* Position the X 50% from top and then push the X on Y axis by 50% */
+/* Translate 1st parameter is X axis and 2nd is Y axis */
+.crossIcon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  /* below is done : to ensure the when we click input field is cleared */
+  cursor: pointer;
+}
+
+button {
+  margin: 20px 0;
+}
+
+/* Basic setup ends here */
+
+/* Setup for rendering ToDo's applies when dynamically rendered as well */
+
+/* Unordered list - Basic Setup */
+/* Remove padding, list styles and and align text to center */
+.todoList {
+  padding-left: 0;
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+
+/* This is for the input element inside the div inside li */
+.todoList input {
+  width: calc(100% - 20px);
+  margin-right: 0;
+}
+
+/* This is for the cross icon inside the div inside li */
+/* No need to reinitialise position as its already done in crossIcon, just change the right value */
+.todoList .crossIcon {
+  right: -20px;
+}
+/* Unordered list - Basic Setup ends here */
+
+/* UL other setup */
+
+/* to add space between li elements */
+.todoList > li {
+  margin-bottom: 20px;
+}
